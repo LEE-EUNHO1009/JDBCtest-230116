@@ -28,13 +28,13 @@
 			ResultSet rs = stmt.executeQuery(sql); //sql문의 결과 값이 저장(select문이 반환하는 레코드 저장)
 			
 			while(rs.next()){
-			//----------
-			String db_id = rs.getString("id");
-			String db_password = rs.getString("password");
-			String db_name = rs.getString("name");
-			String db_email = rs.getString("email");
-			String db_jointime = rs.getString("jointime");
-			//--------레코드 이것만 쓰면 한명 분 쓰는 거임, 백명쓰면 이거 백개 만들어야 해서 반복문 사용해야 함
+				//----------
+				String db_id = rs.getString("id");
+				String db_password = rs.getString("password");
+				String db_name = rs.getString("name");
+				String db_email = rs.getString("email");
+				String db_jointime = rs.getString("jointime");
+				//--------레코드 이것만 쓰면 한명 분 쓰는 거임, 백명쓰면 이거 백개 만들어야 해서 반복문 사용해야 함
 			
 			out.println(db_id+"/"+db_password+"/"+db_name+"/"+db_email+"/"+db_jointime +"<br>");
 			}
