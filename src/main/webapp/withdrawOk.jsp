@@ -18,16 +18,18 @@
 		String username = "root";
 		String password = "1234";
 		
-		String sql = "DELETE FROM members WHERE id= '"+mid+"'";
+		String sql = "DELETE FROM members WHERE id = ?"; //PreparedStatement의 특징: ? 사용
 		
 		Connection conn = null;//DB 연결 선언
 		
 		try {
 			Class.forName(driverName);//드라이버 불러오기
 			conn = DriverManager.getConnection(url, username, password);//DB 연동
-			Statement stmt = conn.createStatement();
+			//Statement stmt = conn.createStatement();
+			PreparedStatement pstmt=conn.prepareStatement(sql);  //sql문은 여기에 들어가게 됨
+			pstmt.setString(1, mid); //?에 이 내용이 들어가게 됨
 			
-			int dbCheck = stmt.executeUpdate(sql);
+			int dbCheck = pstmt.executeUpdate();
 			
 			if(dbCheck == 1) {
 				out.println("회원 탈퇴 성공!!");
@@ -35,7 +37,7 @@
 				out.println("회원 탈퇴 실패!!");
 			}
 			
-			stmt.close();
+			pstmt.close();
 			
 			//System.out.println(conn);
 		} catch(Exception e) {
