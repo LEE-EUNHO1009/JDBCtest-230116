@@ -52,5 +52,7 @@
 			}
 		}
 	%>
+	<br>
+	<a href="withdraw.jsp">회원탈퇴로 가기</a>
 </body>
 </html>
