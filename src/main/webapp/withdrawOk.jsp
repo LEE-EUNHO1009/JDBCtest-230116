@@ -27,7 +27,7 @@
 			conn = DriverManager.getConnection(url, username, password);//DB 연동
 			//Statement stmt = conn.createStatement();
 			PreparedStatement pstmt=conn.prepareStatement(sql);  //sql문은 여기에 들어가게 됨
-			pstmt.setString(1, mid); //?에 이 내용이 들어가게 됨
+			pstmt.setString(1, mid); //?에 이 내용이 들어가게 됨, 0부터 아님
 			
 			int dbCheck = pstmt.executeUpdate();
 			
