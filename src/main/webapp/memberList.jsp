@@ -36,7 +36,7 @@
 				String db_jointime = rs.getString("jointime");
 				//--------레코드 이것만 쓰면 한명 분 쓰는 거임, 백명쓰면 이거 백개 만들어야 해서 반복문 사용해야 함
 			
-			out.println(db_id+"/"+db_password+"/"+db_name+"/"+db_email+"/"+db_jointime +"<br>");
+				out.println(db_id+"/"+db_password+"/"+db_name+"/"+db_email+"/"+db_jointime +"<br>");
 			}
 			
 			rs.close();
